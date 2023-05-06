@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ChatGPT</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            height: 100vh;
+
+            margin: 0;
+
+        }
+
+        #chat {
+
+            width: 80%;
+
+            height: 60%;
+
+            border: 1px solid #ccc;
+
+            padding: 10px;
+
+            overflow-y: auto;
+
+        }
+
+        #input {
+
+            width: 80%;
+
+            margin-top: 10px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="chat"></div>
+
+    <input id="input" type="text" placeholder="Type your message...">
+
+    <script>
+
+        const apiKey = '请在这里填写你的_API_KEY';
+
+        async function sendMessage(message) {
+
+            const responseElement = document.createElement('div');
+
+            responseElement.textContent = 'ChatGPT: ...';
+
+            document.getElementById('chat').appendChild(responseElement);
+
+            const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
+
+                method: 'POST',
+
+                headers: {
+
+                    'Content-Type': 'application/json',
+
+                    'Authorization': `Bearer ${apiKey}`
+
+                },
+
+                body: JSON.stringify({
+
+                    prompt: `User: ${message}\nChatGPT:`,
+
+                    max_tokens: 50,
+
+                    n: 1,
+
+                    stop: null,
+
+                    temperature: 0.5
+
+                })
+
+            });
+
+            const data = await response.json();
+
+            responseElement.textContent = 'ChatGPT: ' + data.choices[0].text.trim();
+
+        }
+
+        document.getElementById('input').addEventListener('keydown', (event) => {
+
+            if (event.key === 'Enter') {
+
+                const message = event.target.value.trim();
+
+                if (message) {
+
+                    const messageElement = document.createElement('div');
+
+                    messageElement.textContent = 'User: ' + message;
+
+                    document.getElementById('chat').appendChild(messageElement);
+
+                    event.target.value = '';
+
+                    sendMessage(message);
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
