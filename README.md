@@ -1,4 +1,4 @@
-# si-ChatGPTS
+# si-ChatGPT
 一个简单的聊天网页只需填写你自己的openai-key既可以正常和ChatGPT聊天
 
 [![HTML](https://img.shields.io/badge/HTML-5-orange?style=flat-square&logo=html5)](https://auzgo.com/)
@@ -28,6 +28,6 @@
 
 
  # 贡献者
-<a href="https://github.com/yoonA2022/si-ChatGPTS/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=yoonA2022/si-ChatGPTS" />
+<a href="https://github.com/yoonA2022/si-ChatGPT/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=yoonA2022/si-ChatGPT" />
 </a>
