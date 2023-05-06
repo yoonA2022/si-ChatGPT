@@ -8,7 +8,7 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=flat-square&logo=javascript)](https://auzgo.com/)
 
 ## 使用教程
-请在index.html文件里34行修改为自己的openai-key
+请在index.html文件里64行修改“const apiKey = '请在这里填写你的_API_KEY'”为自己的openai-key
 ### 演示站
  ```
  https://yoona-2r4b.vercel.app
