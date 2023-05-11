@@ -1,41 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <title>ChatGPT</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>简单网页</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-    <div class="logo" style="background-image: url('https://ga.chaixian.tk/Logo/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230420051439.png')"></div>
-    <h1 class="logo-text">ChatGPT</h1>
-    <div class="right-section">
-        <div class="theme-switcher">
-        <label class="switch">
-            <input type="checkbox" name="theme">
-            <span class="slider round"></span>
-        </label>
-        </div>
-        <i class="fas fa-fox"></i>
-        <span id="clock"></span>
-    </div>
-    </header>
-
-    <main>
-    <div id="chat-window">
-        <ul id="message-list"></ul>
-    </div>
-    <div id="input-box">
-        <input type="text" id="message-input" placeholder="Type your message...">
-        <button id="send-button">Send</button>
-    </div>
-    </main>
-
-    <footer>
-    &copy; 2023 ChatGPT
-    </footer>
-
-    <script src="https://kit.fontawesome.com/8e88e56ba3.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+<header>
+<h1>ChatGPT聊天机器人</h1>
+<div>
+<label for="language">翻译为:</label>
+<select id="language">
+<option value="">原始语言</option>
+<option value="ZH">中文</option>
+</select>
+</div>
+</header>
+<main>
+<p>点击按钮显示警告：</p>
+<button id="alertButton">点我！</button>
+<h2>留下评论：</h2>
+<form id="commentForm">
+<label for="name">姓名：</label>
+<input type="text" id="name" required>
+<br>
+<label for="comment">评论：</label>
+<textarea id="comment" required></textarea>
+<br>
+<button type="submit">提交</button>
+</form>
+<h2>评论：</h2>
+<div id="commentsContainer">
+<!-- 评论将在这里显示 -->
+</div>
+<h2>与机器人聊天：</h2>
+<form id="chatForm">
+<label for="userInput">你的消息：</label>
+<input type="text" id="userInput" required>
+<button type="submit">发送</button>
+</form>
+<div id="chatContainer">
+<!-- 聊天记录将在这里显示 -->
+</div>
+</main>
+<footer>
+<p>由 © 小柴制作</p>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
